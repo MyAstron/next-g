@@ -1,0 +1,124 @@
+  @font-face {
+    font-family: 'modern_age';
+    src: url('./src/font/modern_age/Modern\ Age.ttf') format('truetype'),
+         url('./src/font/modern_age/Modern\ Age\ Italic.ttf') format('truetype');
+  }
+  
+  body {
+      font-family: 'modern_age', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* overflow-y: hidden; */
+  }
+  
+  header {
+      background: linear-gradient(to bottom, #323d3f, #008170);
+      color: white;
+      padding: 0.01% 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .logo {
+      padding-left: 5%;
+  }
+  
+  nav {
+      margin: 10px 15% 0 -20%;
+  }
+  
+  nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  nav ul li {
+      display: inline;
+      margin: 0 10%;
+  }
+  
+  nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
+      margin: 0 10%;
+  }
+  
+  section#inicio {
+      position: relative;
+      background: black;
+      padding: 10% 0;
+      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  section#inicio:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      pointer-events: none;
+  }
+  
+  section#inicio h1 {
+      font-size: 36px;
+  }
+  
+  section#inicio .contenido {
+      margin: 0 10% 0 -5%;
+  }
+  
+  section#inicio .contenido h1 {
+      font-size: 60px;
+      margin: 0 10% 0 -5%;
+  }
+  
+  section {
+      padding: 50px 0;
+      text-align: center;
+  }
+  
+  .becas {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #333;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  }
+  
+  .boton {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #333;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  }
+  
+  .boton:hover {
+      background-color: #555;
+  }
+  
+  footer {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+  }

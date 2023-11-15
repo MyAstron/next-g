@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>..:: Nex G ::..</title>
+    <link rel="icon" href="./src/imgs/logo_verde_img.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.css">    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const numStars = 250; // Número de estrellas
+        const stars = [];
+
+        for (let i = 1; i <= numStars; i++) {
+            const x = Math.random() * 100,
+                y = Math.random() * 100,
+                size = Math.random() * 5;
+
+            stars.push(`radial-gradient(${size}px ${size}px at ${x}% ${y}%, white 55%, transparent 0)`);
+        }
+
+        const starBackground = stars.join(', ');
+        document.querySelector('#inicio').style.backgroundImage = starBackground;
+    });
+</script>
+<script src="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.js"></script>
+<body class="simplebar">
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="./src/imgs/logo.png" alt="Logo" width="60%">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre-nosostros">Sobre Nosotros</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+                <li><a href="#becas">Becas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de inicio -->
+    <section id="inicio" class="animar">
+        <div class="astroauta">
+            <img src="./src/imgs/astronauta.png" alt="Astronauta">
+        </div>
+        <div class="contenido">
+            <h1>LIBERA TU POTENCIAL</h1>
+            <p class="becas">"La educación es el gran motor del desarrollo personal. Es a través de la educación que la hija de un campesino puede convertirse en médico, que el hijo de un minero puede convertirse en jefe de la mina, que un niño de trabajadores agrícolas puede llegar a ser presidente de una gran nación."<br><br> - Nelson Mandela</p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Nex G. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
