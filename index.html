@@ -10,6 +10,9 @@
 </head>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function () {
+                document.querySelector('.loader').style.display = 'none';
+            }, 2000);
         const numStars = 250; // Número de estrellas
         const stars = [];
 
@@ -26,6 +29,9 @@
     });
 </script>
 <script src="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.js"></script>
+<div class="loader">
+    <img src="./src/gifs/loading.gif" alt="loaging">
+</div>
 <body class="simplebar">
 
     <!-- Encabezado -->
@@ -39,6 +45,7 @@
                 <li><a href="#recursos">Recursos</a></li>
                 <li><a href="#comunidad">Comunidad</a></li>
                 <li><a href="#becas">Becas</a></li>
+                <li><a href="#">&nbsp;</a></li>
             </ul>
         </nav>
     </header>

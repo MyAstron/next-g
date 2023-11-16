@@ -3,9 +3,18 @@
     src: url('./src/font/modern_age/Modern\ Age.ttf') format('truetype'),
          url('./src/font/modern_age/Modern\ Age\ Italic.ttf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'MuseoModerno';
+    src: url('./src/font/MuseoModerno/MuseoModerno-VariableFont_wght.ttf') format('truetype');
+  }
+
+  html {
+    background-color: #323d3f;
+  }
   
   body {
-      font-family: 'modern_age', sans-serif;
+      font-family: 'MuseoModerno', sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -13,12 +22,17 @@
   }
   
   header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: linear-gradient(to bottom, #323d3f, #008170);
       color: white;
       padding: 0.01% 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 100;
   }
   
   .logo {
@@ -36,6 +50,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 20px;
   }
   
   nav ul li {
@@ -51,6 +66,7 @@
   }
   
   section#inicio {
+    margin-top: 10%;
       position: relative;
       background: black;
       padding: 10% 0;
@@ -121,4 +137,17 @@
       color: white;
       padding: 10px 0;
       text-align: center;
+  }
+  .loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
