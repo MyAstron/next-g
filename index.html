@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>..:: Nex G ::..</title>
-    <link rel="icon" href="./src/imgs/logo_verde_img.png" type="image/png">
-    <link rel="stylesheet" href="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.css">    
+    <link rel="icon" href="./src/imgs/logo_verde_img.png" type="image/png">  
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
@@ -27,6 +26,14 @@
         const starBackground = stars.join(', ');
         document.querySelector('#inicio').style.backgroundImage = starBackground;
     });
+    function beta() {
+        var mensaje = document.getElementById('mensaje');
+            mensaje.style.display = 'block';
+
+            setTimeout(function() {
+                mensaje.style.display = 'none';
+            }, 2500);
+    }
 </script>
 <script src="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.js"></script>
 <div class="loader">
@@ -49,6 +56,20 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Sección de prevista -->
+    <section id="preview" class="img-fondo">
+        <div class="container-preview">
+        <h1>Libera tu Potencial</h1>
+        <div class="botones">
+            <div id="mensaje">Aquí irá un formulario para rellenar los datos</div>
+            <button class="button" onclick="beta()">Recibir Ayuda<div class="hoverEffect"><div></div></div></button>
+            
+            <button class="button" onclick="beta()">Dar Ayuda<div class="hoverEffect"><div></div></div></button>
+        </div>
+        <p>Descubre un mundo de posibilidades.</p>
+    </div>
+    </section>
 
     <!-- Sección de inicio -->
     <section id="inicio" class="animar">
