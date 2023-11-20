@@ -137,6 +137,9 @@
         text-shadow: 0 0 10px #323d3f, 0 0 20px #323d3f, 0 0 30px #008170, 0 0 40px #008170, 0 0 50px #008170, 0 0 60px #008170, 0 0 70px #008170;
     }
     
+    ::-webkit-scrollbar {
+      width: 0;
+  }
   button {
       display: inline-block;
       padding: 2% 10% 2% 10%;
@@ -148,17 +151,30 @@
       font-size: 36px;
       font-family: "modern_age";
       cursor: pointer;
-    align-items: center;
+    /* align-items: center;
     justify-content: center;
     border: 0;
     position: relative;
     overflow: hidden;
     transition: all 0.02s;
     font-weight: bold;
-    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5); */
+  }
+  .button {
+    font-weight: 900;
+    border: 1px solid #008170;
+    box-shadow: 0 0 20px #008170,
+      0 0 5px #008170 inset;
   }
   
   .button:hover {
+    transform: translateY(5px);
+    box-shadow: 0 0 20px #323d3f,
+      0 0 20px #008170,
+      0 0 10px #008170 inset;
+  }
+  
+  /* .button:hover {
     background: rgb(193, 228, 248);
     color: rgb(33, 0, 85);
   }
@@ -205,7 +221,7 @@
     100% {
       transform: rotate(360deg);
     }
-  }
+  } */
   
   footer {
       background-color: #333;
@@ -228,7 +244,6 @@
     z-index: 1000;
   }
 
-
   #mensaje {
     display: none;
     position: fixed;
@@ -239,4 +254,70 @@
     padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
+}
+
+div#facebook {
+  border: none;
+  margin-left: 10px;
+  background-color: transparent;
+  position: relative;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+div#facebook a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 91, 61, 0.5);
+  border-right: 1px solid rgba(0, 91, 61, 0.2);
+  border-bottom: 1px solid rgba(0, 91, 61, 0.2);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: rgba(0, 91, 61, 0.1);
+}
+
+div#facebook a:hover {
+  transform: translateY(-20px);
+}
+
+div#facebook a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background-color: rgba(0, 91, 61, 0.5);
+  transform: skewX(45deg) translateX(150px);
+  transition: 0.5s ease;
+}
+
+div#facebook a:hover::before {
+  transform: skewX(45deg) translateX(-150px);
+}
+#facebook-icon {
+  color: #008170
+}
+.linea {
+  height: 3px;
+  width: 20%;
+  padding: 0 20% 0 -20%;
+  background-color: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer p {
+  position: relative;
+  padding: 0 20%;
 }
