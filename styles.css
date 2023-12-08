@@ -147,7 +147,7 @@
       text-decoration: none;
       color: white;
       background: linear-gradient(to top, #323d3f, #008170);
-      border-radius: 25px;
+      border-radius: 50px;
       font-size: 36px;
       font-family: "modern_age";
       cursor: pointer;
@@ -155,12 +155,9 @@
   .button {
     font-weight: 900;
     border: 1px solid #008170;
-    box-shadow: 0 0 20px #008170,
-      0 0 5px #008170 inset;
   }
   
   .button:hover {
-    transform: translateY(5px);
     box-shadow: 0 0 20px #323d3f,
       0 0 20px #008170,
       0 0 10px #008170 inset;
