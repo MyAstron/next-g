@@ -26,9 +26,10 @@
         const starBackground = stars.join(', ');
         document.querySelector('#inicio').style.backgroundImage = starBackground;
     });
-    function beta() {
+    function beta(string) {
         var mensaje = document.getElementById('mensaje');
             mensaje.style.display = 'block';
+            mensaje.textContent = "Este es el espacio para: "+string
 
             setTimeout(function() {
                 mensaje.style.display = 'none';
@@ -62,16 +63,16 @@
         <div class="container-preview">
         <h1>Libera tu Potencial</h1>
         <div class="botones">
-            <div id="mensaje">Aquí irá un formulario para rellenar los datos</div>
-            <button class="button" onclick="beta()">Recibir Ayuda<div class="hoverEffect"><div></div></div></button>
+            <div id="mensaje"></div>
+            <button class="button" onclick="beta('form')">Recibir Ayuda<div class="hoverEffect"><div></div></div></button>
             
-            <button class="button" onclick="beta()">Dar Ayuda<div class="hoverEffect"><div></div></div></button>
+            <button class="button" onclick="beta('form')">Dar Ayuda<div class="hoverEffect"><div></div></div></button>
         </div>
         <p>Descubre un mundo de posibilidades.</p>
     </div>
     </section>
 
-    <!-- Sección de inicio -->
+    <!-- Sección de inicio 
     <section id="inicio" class="animar">
         <div class="astroauta">
             <img src="./src/imgs/astronauta.png" alt="Astronauta">
@@ -80,17 +81,27 @@
             <h1>LIBERA TU POTENCIAL</h1>
             <p class="becas">"La educación es el gran motor del desarrollo personal. Es a través de la educación que la hija de un campesino puede convertirse en médico, que el hijo de un minero puede convertirse en jefe de la mina, que un niño de trabajadores agrícolas puede llegar a ser presidente de una gran nación."<br><br> - Nelson Mandela</p>
         </div>
-    </section>
+    </section> -->
 
     <!-- Pie de página -->
     <footer>
-        <div id="facebook">
-            <a href="https://google.com" target="_blank"><img src="./src/svg/facebook.svg"></a>
-            <a href="https://google.com" target="_blank"><img src="./src/svg/facebook.svg"></a>
-            <div class="linea"></div>
-            <p>&copy; 2023 Nex G. Todos los derechos reservados.</p>
+        <div class="footer">
+            <div>
+                Mas sobre nosotros:<br>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" target="_blank" class="social facebook"><img src="./src/svg/facebook.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="social instagram"><img src="./src/svg/instagram.svg" alt="instagram"></a>
+                    <a href="https://www.youtube.com/" target="_blank" class="social youtube"><img src="./src/svg/youtube.svg" alt="youtube"></a>
+                </div>
+            </div>
+            <div>
+                <a onclick="beta('Terminos')">Términos y Condiciones</a><br>
+                <a onclick="beta('Politicas')">Politicas y Cookies</a>
+            </div>
+        </div>
+        <div class="linea">
+            <span>&copy; 2023 Nex G. Todos los derechos reservados.</span>
         </div>
     </footer>
-
 </body>
 </html>
