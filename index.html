@@ -1,75 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>..:: Nex G ::..</title>
-    <link rel="icon" href="./src/imgs/logo_verde_img.png" type="image/png">  
-    <link rel="stylesheet" href="styles.css">
-</head>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function () {
-                document.querySelector('.loader').style.display = 'none';
-            }, 2000);
-        const numStars = 250; // Número de estrellas
-        const stars = [];
+    <link rel="icon" href="./src/imgs/logo_verde_img.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        document.querySelector(".loader").style.display = "none";
+      }, 2000);
+      const numStars = 250; // Número de estrellas
+      const stars = [];
 
-        for (let i = 1; i <= numStars; i++) {
-            const x = Math.random() * 100,
-                y = Math.random() * 100,
-                size = Math.random() * 5;
+      for (let i = 1; i <= numStars; i++) {
+        const x = Math.random() * 100,
+          y = Math.random() * 100,
+          size = Math.random() * 5;
 
-            stars.push(`radial-gradient(${size}px ${size}px at ${x}% ${y}%, white 55%, transparent 0)`);
-        }
+        stars.push(
+          `radial-gradient(${size}px ${size}px at ${x}% ${y}%, white 55%, transparent 0)`
+        );
+      }
 
-        const starBackground = stars.join(', ');
-        document.querySelector('#inicio').style.backgroundImage = starBackground;
+      const starBackground = stars.join(", ");
+      document.querySelector("#inicio").style.backgroundImage = starBackground;
     });
-    function beta(string) {
-        var mensaje = document.getElementById('mensaje');
-            mensaje.style.display = 'block';
-            mensaje.textContent = "Este es el espacio para: "+string
+    function showContact(string) {
+      var mensaje = document.getElementById("mensaje");
+      mensaje.style.display = "block";
 
-            setTimeout(function() {
-                mensaje.style.display = 'none';
-            }, 2500);
+      setTimeout(function () {
+        mensaje.style.display = "none";
+      }, 60000);
     }
-</script>
-<script src="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.js"></script>
-<div class="loader">
-    <img src="./src/gifs/loading.gif" alt="loaging">
-</div>
-<body class="simplebar">
 
+    function closeContact(){
+      var mensaje = document.getElementById("mensaje");
+      mensaje.style.display = "none";
+    }
+
+    function enterMouse() {
+      var imagenElement = document.getElementById("img");
+      imagenElement.src = "./src/svg/letter.svg"; // Cambiar a la segunda imagen
+    }
+
+    function leaveMouse() {
+      var imagenElement = document.getElementById("img");
+      imagenElement.src = "./src/svg/email.svg"; // Volver a la primera imagen
+    }
+  </script>
+  <script src="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.js"></script>
+  <div class="loader">
+    <img src="./src/gifs/loading.gif" alt="loaging" />
+  </div>
+  <body class="simplebar">
     <!-- Encabezado -->
     <header>
-        <div class="logo">
-            <img src="./src/imgs/logo.png" alt="Logo" width="60%">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre-nosostros">Sobre Nosotros</a></li>
-                <li><a href="#contactos">Contacto</a></li>
-                <li><a href="#comunidad">Comunidad</a></li>
-                <li><a href="#becas">Becas</a></li>
-                <li><a href="#">&nbsp;</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img src="./src/imgs/logo.png" alt="Logo" width="60%" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#sobre-nosostros">Sobre Nosotros</a></li>
+          <li><a href="#contactos">Contacto</a></li>
+          <li><a href="#comunidad">Comunidad</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Sección de prevista -->
     <section id="preview" class="img-fondo">
-        <div class="container-preview">
+      <div class="container-preview">
         <h1>Libera tu Potencial</h1>
         <div class="botones">
-            <div id="mensaje"></div>
-            <button class="button" onclick="beta('form')">Recibir Ayuda<div class="hoverEffect"><div></div></div></button>
-            
-            <button class="button" onclick="beta('form')">Dar Ayuda<div class="hoverEffect"><div></div></div></button>
+          <form
+            id="mensaje"
+            action="https://formspree.io/f/xjvnbebb"
+            method="post"
+            class="form"
+          >
+            <span class="title contenedor">
+                <p>¡Contacta nos! ❤️</p>
+                <button type="button" class="close" onclick="closeContact()">
+                    <img src="./src/svg/cerrar.svg" alt="Cerrar">
+                </button>
+            </span>
+            <p class="description">
+              Para contactarnos danos tu correo y nosotros te escribiremos!
+            </p>
+            <div class="contenedor">
+              <div class="input-group">
+                <input
+                  required=""
+                  type="email"
+                  name="email"
+                  autocomplete="off"
+                  class="input"
+                />
+                <label class="user-label">Tu correo electronico</label>
+              </div>
+              <button
+                class="btn"
+                id="send-email"
+                onmouseenter="enterMouse()"
+                onmouseleave="leaveMouse()"
+              >
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <img src="./src/svg/email.svg" alt="Email" id="img" />
+                  </div>
+                </div>
+                <span>Send</span>
+              </button>
+            </div>
+          </form>
+          <button class="button" onclick="showContact('form')">
+            Recibir Ayuda
+            <div class="hoverEffect"><div></div></div>
+          </button>
+
+          <button class="button" onclick="showContact('form')">
+            Dar Ayuda
+            <div class="hoverEffect"><div></div></div>
+          </button>
         </div>
         <p>Descubre un mundo de posibilidades.</p>
-    </div>
+      </div>
     </section>
 
     <!-- Sección de inicio 
@@ -85,23 +147,38 @@
 
     <!-- Pie de página -->
     <footer>
-        <div class="footer">
-            <div>
-                Mas sobre nosotros:<br>
-                <div class="social-media">
-                    <a href="https://www.facebook.com/" target="_blank" class="social facebook"><img src="./src/svg/facebook.svg" alt="facebook"></a>
-                    <a href="https://www.instagram.com/" target="_blank" class="social instagram"><img src="./src/svg/instagram.svg" alt="instagram"></a>
-                    <a href="https://www.youtube.com/" target="_blank" class="social youtube"><img src="./src/svg/youtube.svg" alt="youtube"></a>
-                </div>
-            </div>
-            <div>
-                <a onclick="beta('Terminos')">Términos y Condiciones</a><br>
-                <a onclick="beta('Politicas')">Politicas y Cookies</a>
-            </div>
+      <div class="footer">
+        <div>
+          Mas sobre nosotros:<br />
+          <div class="social-media">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="social facebook"
+              ><img src="./src/svg/facebook.svg" alt="facebook"
+            /></a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="social instagram"
+              ><img src="./src/svg/instagram.svg" alt="instagram"
+            /></a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              class="social youtube"
+              ><img src="./src/svg/youtube.svg" alt="youtube"
+            /></a>
+          </div>
         </div>
-        <div class="linea">
-            <span>&copy; 2023 Nex G. Todos los derechos reservados.</span>
+        <div>
+          <a onclick="showContact('Terminos')">Términos y Condiciones</a><br />
+          <a onclick="showContact('Politicas')">Politicas y Cookies</a>
         </div>
+      </div>
+      <div class="linea">
+        <span>&copy; 2023 Nex G. Todos los derechos reservados.</span>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
