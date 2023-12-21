@@ -14,6 +14,16 @@
     document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         document.querySelector(".loader").style.display = "none";
+        var devElement = document.getElementById("dev");
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        ) {
+          devElement.style.display = "block";
+        } else {
+          devElement.style.display = "none";
+        }
       }, 2000);
       const numStars = 250; // Número de estrellas
       const stars = [];
@@ -31,6 +41,9 @@
       const starBackground = stars.join(", ");
       document.querySelector("#inicio").style.backgroundImage = starBackground;
     });
+
+    // Uso de la función para determinar si es un dispositivo móvil
+
     function showContact(string) {
       var mensaje = document.getElementById("mensaje");
       mensaje.style.display = "block";
@@ -40,7 +53,7 @@
       }, 60000);
     }
 
-    function closeContact(){
+    function closeContact() {
       var mensaje = document.getElementById("mensaje");
       mensaje.style.display = "none";
     }
@@ -56,6 +69,11 @@
     }
   </script>
   <script src="https://unpkg.com/simplebar@5.4.0/dist/simplebar.min.js"></script>
+  <div class="dev contenedor" id="dev">
+    Hola, esta pagina fue diseñada para computadoras, asi que si pudieras
+    cambiar tu sistema operativo te lo agradeceria.
+    <a onclick="devElement.style.display = 'none'">Omitir</a>
+  </div>
   <div class="loader">
     <img src="./src/gifs/loading.gif" alt="loaging" />
   </div>
@@ -86,10 +104,10 @@
             class="form"
           >
             <span class="title contenedor">
-                <p>¡Contacta nos! ❤️</p>
-                <button type="button" class="close" onclick="closeContact()">
-                    <img src="./src/svg/cerrar.svg" alt="Cerrar">
-                </button>
+              <p>¡Contacta nos! ❤️</p>
+              <button type="button" class="close" onclick="closeContact()">
+                <img src="./src/svg/cerrar.svg" alt="Cerrar" />
+              </button>
             </span>
             <p class="description">
               Para contactarnos danos tu correo y nosotros te escribiremos!
@@ -134,16 +152,56 @@
       </div>
     </section>
 
-    <!-- Sección de inicio 
+    <!-- Sección de inicio  -->
     <section id="inicio" class="animar">
-        <div class="astroauta">
+      <div class="carrusel">
+        <div class="carrusel-contenedor contenedor" id="carrusel-contenedor">
+          <div class="carrusel-elemento card">
+            <div class="card__img contenedor">
+              <img src="./src/imgs/fondo.png" alt="Image Card" />
+            </div>
+            <div class="card__avatar contenedor">
+              <img src="./src/imgs/astronauta.png" alt="Avatar Card" />
+            </div>
+            <a
+              href="https://www.instagram.com/sic._lpez.12/"
+              target="_blank"
+              class="card__title"
+            >
+              Cristopher Sic
+            </a>
+            <div class="card__subtitle">Web Development</div>
+            <!-- <div class="card__wrapper">
+              <button class="card__btn">Follow</button>
+              <button class="card__btn card__btn-solid">read more</button>
+            </div> -->
+          </div>
+          <div class="carrusel-elemento card">
+            <div class="card__img contenedor">
+              <img src="./src/imgs/fondo.png" alt="Image Card" />
+            </div>
+            <div class="card__avatar contenedor">
+              <img src="./src/imgs/astronauta.png" alt="Avatar Card" />
+            </div>
+            <a
+              href="https://www.instagram.com/rousselinnn/"
+              target="_blank"
+              class="card__title"
+              >Jose Adrian Corado Ramirez</a
+            >
+            <div class="card__subtitle">Owner & Manager</div>
+          </div>
+          <!-- Agrega más elementos según sea necesario -->
+        </div>
+      </div>
+      <!-- <div class="astroauta">
             <img src="./src/imgs/astronauta.png" alt="Astronauta">
         </div>
         <div class="contenido">
             <h1>LIBERA TU POTENCIAL</h1>
             <p class="becas">"La educación es el gran motor del desarrollo personal. Es a través de la educación que la hija de un campesino puede convertirse en médico, que el hijo de un minero puede convertirse en jefe de la mina, que un niño de trabajadores agrícolas puede llegar a ser presidente de una gran nación."<br><br> - Nelson Mandela</p>
-        </div>
-    </section> -->
+        </div> -->
+    </section>
 
     <!-- Pie de página -->
     <footer>
